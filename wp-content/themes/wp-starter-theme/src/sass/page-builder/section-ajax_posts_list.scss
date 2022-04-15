@@ -1,0 +1,35 @@
+.section-ajax_posts_list {
+    margin: 50px 0;
+
+    #items-list {
+        margin: 50px 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+
+        .item {
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+    }
+
+    .btn-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .btn {
+            background-color: #0d66c2;
+            color: #fff;
+
+            &.disabled {
+                pointer-events: none;
+                opacity: .5;
+            }
+
+            &.hide {
+                display: none;
+            }
+         }
+    }
+}
