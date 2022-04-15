@@ -4,10 +4,11 @@
         let target = $("#items-list")
         let btn = $(".load-more-btn")
 
-        let defaultItems = target.data("default-items")
-        let requestItems = target.data("request-items")
-        let totalItems = target.data("total-items")
-        let loadedItems = defaultItems
+        let app = {
+            loaded: target.data("default-items"),
+            itemsPerPage: target.data("items-per-page"),
+            total: target.data("total-items")
+        }
 
         //handle click
         btn.on("click", function () {
@@ -19,22 +20,17 @@
         function loadItemsAjax() {
             $.ajax({
                 url: ajax_object.ajax_url,
+                dataType: "json",
                 type : "post",
                 data : {
-                    offset: loadedItems,
-                    requestItems: requestItems,
+                    offset: app.loaded,
+                    itemsPerPage: app.itemsPerPage,
                     action: "ajax_load_more",
                 },
                 success: function(response) {
-
-                    if( loadedItems + requestItems > totalItems ) {
-                        loadedItems = totalItems
-                    } else {
-                        loadedItems += requestItems
-                    }
-
+                    app.loaded += response.length
                     target.append(response);
-                    loadedItems >= totalItems ? btn.addClass("hide") : btn.removeClass("disabled")
+                    app.loaded >= app.total ? btn.addClass("hide") : btn.removeClass("disabled")
                 }
             })
         }
