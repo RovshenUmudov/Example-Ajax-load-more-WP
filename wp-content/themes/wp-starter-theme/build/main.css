@@ -555,8 +555,10 @@ body.modal-open {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 30px; }
     .section-ajax_posts_list #items-list .item {
-      padding: 20px;
+      padding: 30px;
       border: 1px solid #ccc; }
+      .section-ajax_posts_list #items-list .item .image-wrap img {
+        width: 100%; }
   .section-ajax_posts_list .btn-wrap {
     display: flex;
     flex-wrap: wrap;
@@ -569,6 +571,14 @@ body.modal-open {
         opacity: .5; }
       .section-ajax_posts_list .btn-wrap .btn.hide {
         display: none; }
+  .section-ajax_posts_list .loader-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    .section-ajax_posts_list .loader-wrap .loader {
+      display: none; }
+      .section-ajax_posts_list .loader-wrap .loader.show {
+        display: block; }
 
 @charset "UTF-8";
 @font-face {

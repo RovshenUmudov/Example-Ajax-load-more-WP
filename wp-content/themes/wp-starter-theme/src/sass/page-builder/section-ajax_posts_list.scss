@@ -8,8 +8,14 @@
         grid-gap: 30px;
 
         .item {
-            padding: 20px;
+            padding: 30px;
             border: 1px solid #ccc;
+
+            .image-wrap {
+                img {
+                    width: 100%;
+                }
+            }
         }
     }
 
@@ -30,6 +36,20 @@
             &.hide {
                 display: none;
             }
-         }
+        }
+    }
+
+    .loader-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .loader {
+            display: none;
+
+            &.show {
+                display: block;
+            }
+        }
     }
 }

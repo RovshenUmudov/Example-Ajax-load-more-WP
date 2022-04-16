@@ -1,59 +1,11 @@
-# WordPress #
-############
-wp-config-local.php
-wp-cli.local.yml
-wp-content/uploads
-wp-content/blogs.dir/
-wp-content/upgrade/
-wp-content/backup-db/
-wp-content/updraft/
-wp-content/backupwordpress-*/
-wp-content/managewp/backups/
-wp-content/advanced-cache.php
-wp-content/wp-cache-config.php
-wp-content/wp-config.php
+.DS_Store
+.bash_history
+.viminfo
 .idea
-sitemap.xml
-sitemap.xml.gz
-*.conf
-
-# @TODO writable paths
-wp-content/cache/
-wp-content/backups/
-
-# Avoid accidental modification of pantheon.upstream.yml in sites
-# created from this upstream
-pantheon.upstream.yml
-
-# Packages #
-############
-*.7z
-*.dmg
-*.gz
-*.bz2
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-*.tgz
-!wp-includes/**/*.gz
-
-# Logs and databases #
-######################
-*.log
-
-# OS generated files #
-######################
-.DS_Store*
-ehthumbs.db
-Thumbs.db
-._*
-
-# Vim generated files #
-######################
-*.un~
-
-# SASS #
-##########
-.sass-cache
+**/build
+**/node_modules
+**/DS_Store
+**/.DS_Store
+wp-config.php
+**/package-lock.json
+wp-content/updraft

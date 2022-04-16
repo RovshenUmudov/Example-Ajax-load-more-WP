@@ -19,6 +19,7 @@
             data-default-items="<?php echo get_sub_field("default_items"); ?>"
             data-items-per-page="<?php echo get_sub_field("items_per_page"); ?>"
             data-total-items="<?php echo $total->publish; ?>"
+            data-infinity-scroll="<?php echo get_sub_field("infinity_scroll"); ?>"
         >
             <?php if( $query->have_posts() ) : ?>
                 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
@@ -28,10 +29,16 @@
             <?php endif; ?>
         </div>
 
-        <!-- load more -->
-        <?php if( get_sub_field("default_items") < $total->publish ) : ?>
-            <div class="btn-wrap">
-                <div class="btn load-more-btn"><?php echo get_sub_field('load_more_text'); ?></div>
+        <!-- load more or loader -->
+        <?php if( !get_sub_field("infinity_scroll")) : ?>
+            <?php if( get_sub_field("default_items") < $total->publish ) : ?>
+                <div class="btn-wrap">
+                    <div class="btn load-more-btn"><?php echo "Load More"; ?></div>
+                </div>
+            <?php endif; ?>
+        <?php else : ?>
+            <div class="loader-wrap">
+                <div class="loader">Loading...</div>
             </div>
         <?php endif; ?>
     </div>
